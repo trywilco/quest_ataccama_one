@@ -1,0 +1,67 @@
+id: quiz_on_data_quality
+learningObjectives:
+  - Reinforce understanding of data quality fundamentals.
+hints:
+  - The dimensions include elements like accuracy and consistency.
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: Let's see what you've learned so far about data quality.
+          - text: Which of the following is NOT typically considered a key dimension of data quality?
+          - text: Choose the correct answer from the list below.
+    - actionId: quiz_message
+      name: quiz
+      params:
+        person: lucca
+        options:
+          - Accuracy
+          - Completeness
+          - Consistency
+          - Velocity
+trigger:
+  type: chat_form_submitted
+  flowNode:
+    switch:
+      key: ${formSubmission}
+      cases:
+        A:
+          do:
+            - actionId: bot_message
+              params:
+                person: lucca
+                messages:
+                  - text: Accuracy is indeed a primary data quality dimension. Try again!
+            - actionId: replay_action
+              params:
+                actionName: quiz
+        B:
+          do:
+            - actionId: bot_message
+              params:
+                person: lucca
+                messages:
+                  - text: Completeness is key in ensuring data sets are intact. Not the correct choice here!
+            - actionId: replay_action
+              params:
+                actionName: quiz
+        C:
+          do:
+            - actionId: bot_message
+              params:
+                person: lucca
+                messages:
+                  - text: Consistency is definitely a recognized dimension of data quality. Try once more!
+            - actionId: replay_action
+              params:
+                actionName: quiz
+        D:
+          do:
+            - actionId: bot_message
+              params:
+                person: lucca
+                messages:
+                  - text: Correct! Velocity is often associated with big data, not specifically a traditional data quality dimension.
+            - actionId: finish_step

@@ -1,0 +1,28 @@
+id: intro_to_data_quality
+learningObjectives:
+  - Understand the basics of data quality and its importance.
+hints:
+  - Consider reading about data quality fundamentals.
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: Welcome to our quest on mastering data quality with Ataccama ONE!
+          - text: Data quality is crucial because poor data can lead to bad decision-making.
+          - text: It's essential to ensure accuracy, completeness, and consistency in your
+              data.
+          - text: In this first step, we'll explore what data quality means and why it's a
+              fundamental aspect of data management.
+          - text: Let's dive into the key dimensions of data quality, such as accuracy,
+              completeness, consistency, and timeliness.
+          - text: When you're ready, let's continue to explore further.
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: finish_step

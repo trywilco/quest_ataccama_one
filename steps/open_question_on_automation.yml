@@ -1,0 +1,95 @@
+id: open_question_on_automation
+learningObjectives:
+  - Reflect on how automation can impact data quality management.
+hints:
+  - Consider the potential of reducing human error.
+  - Think about time savings and resource utilization.
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: Now it's your turn!
+          - text: How do you think automation impacts the efficiency and effectiveness of
+              data quality management?
+trigger:
+  type: user_message
+  params:
+    person: lucca
+  flowNode:
+    do:
+      - actionId: parse_user_response
+        name: user_answer
+        params:
+          prompt: "
+
+            \  Please evaluate the user's answer in relation to the
+            expected answer: Automation improves efficiency by reducing manual
+            tasks, ensuring consistency, and allowing teams to focus on analysis
+            instead of data preparation..
+
+            \  # Assessment Criteria
+
+            \  - Determine if the user's response demonstrates a
+            clear understanding of the key concepts and ideas presented in the
+            expected answer.
+
+            \  - Consider synonyms, paraphrasing, and different
+            phrasing that convey the same meaning.
+
+            \  - Be flexible and focus on the essence of the answer
+            rather than exact wording.
+
+
+            \  # Response Guidelines:
+
+            \  - If the user's answer is correct or shows sufficient
+            understanding, return 'correct: true'.
+
+            \    - Provide a positive and affirming message,
+            congratulating them and reinforcing their understanding.
+
+            \  - If the user's answer is incorrect or incomplete,
+            return 'correct: false'.
+
+            \    - Gently explain why the answer is not fully
+            correct or what may be missing.
+
+            \    - Encourage them to try again, being empathetic and
+            supportive.
+
+
+            \  # Tone and Style:
+
+            \  - Use friendly and encouraging language.
+
+            \  - Be empathetic to the user's learning process.
+
+            \  - Focus on helping the user learn and understand the
+            material.
+
+            \            "
+          schema:
+            correct: boolean
+            reply: string
+    if:
+      conditions:
+        - conditionId: is_truthy
+          params:
+            value: ${outputs.user_answer.value.correct}
+      then:
+        do:
+          - actionId: bot_message
+            params:
+              person: lucca
+              messages:
+                - text: ${outputs.user_answer.value.reply}
+          - actionId: finish_step
+      else:
+        do:
+          - actionId: bot_message
+            params:
+              person: lucca
+              messages:
+                - text: ${outputs.user_answer.value.reply}

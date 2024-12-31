@@ -1,0 +1,27 @@
+id: evaluating_data_quality
+learningObjectives:
+  - Learn how to evaluate the effectiveness of data quality initiatives.
+hints:
+  - Dashboards and reporting tools are key to tracking progress.
+  - Continuously refine your data quality strategy based on evaluation outcomes.
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: "Finally, let's talk about evaluating your data quality initiatives. Ataccama ONE provides dashboards and reports to assess data quality metrics over time. Regular evaluation helps in adjusting strategies for continuous improvement."
+          - text: "Remember, the goal is ongoing data perfection – it's a journey, not a destination! Well, what a ride it's been! You've explored the frontier of data quality management. Check out our [success stories](https://www.ataccama.com/customers) for inspiration. Fantastic job! When you're ready to share your thoughts with the world, continue."
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: bot_message
+        params:
+          person: lucca
+          messages:
+            - text: "You've reached the end of our quest. Cheers to mastering data quality with Ataccama ONE! You've tackled data profiling, cleansing, automation, and evaluation. Implement these insights to maintain integrity in your datasets and drive impactful decisions. Until next time, keep those data spirits high!"
+      - actionId: finish_step

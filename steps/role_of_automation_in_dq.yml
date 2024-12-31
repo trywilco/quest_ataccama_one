@@ -1,0 +1,22 @@
+id: role_of_automation_in_dq
+learningObjectives:
+  - Discover how automation enhances data quality processes.
+hints:
+  - Explore how automation fits into broader data strategy frameworks.
+  - Investigate Ataccama's automation capabilities in their product resources.
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: "Automation can be your best friend when it comes to data quality improvement. [Ataccama ONE](https://www.ataccama.com/platform) leverages automation to expedite tasks like data profiling and cleansing. This approach minimizes manual errors and ensures consistency across datasets."
+          - text: "Embracing automation isn't just about efficiency; it's about achieving higher quality data. When you're as excited about automation as I am, we can move forward."
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: finish_step

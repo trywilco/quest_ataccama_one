@@ -1,0 +1,22 @@
+id: importance_of_data_cleansing
+learningObjectives:
+  - Understand the importance and methods of data cleansing.
+hints:
+  - Check out quick guides on Ataccama ONE's cleansing features.
+  - Look for tutorials on common data cleansing techniques.
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: "Time to get our hands dirty with data cleansing. Cleansing is about fixing inaccuracies, removing duplicates, and ensuring consistency in your data. Check out the [Ataccama docs](https://docs.ataccama.com/) for more details."
+          - text: "Think of it as grooming your data to make it presentation-ready for analysis. Keen to clean? Let's keep going!"
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: finish_step

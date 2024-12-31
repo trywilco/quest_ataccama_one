@@ -1,0 +1,37 @@
+id: ataccama_one_data_quality
+title: "Mastering Ataccama ONE: Data Quality"
+subtitle: Enhance data integrity with Ataccama ONE
+description: >-
+  In this quest, you'll delve into the realm of Ataccama ONE's Data Quality
+  capabilities, learning how to transform raw data into valuable insights.
+  Whether you're a beginner looking to understand data quality fundamentals or
+  an experienced user, this quest offers vital insights into maintaining data
+  integrity.
+
+
+  We'll cover the core principles of data quality management, including data profiling, cleansing, and validation. Learn how Ataccama ONE empowers users to automate data quality processes, ensuring consistency and accuracy across your datasets.
+
+
+  By the end of this quest, you'll be proficient in utilizing Ataccama ONE for robust data quality assurance, leading to improved decision-making and operational efficiency.
+
+
+  Prepare to embark on a journey that will elevate your data management skills and equip you with the tools needed to maintain the highest data quality standards.
+level: intermediate
+duration: 0.75
+skills:
+  - data management
+  - data quality
+  - data integrity
+  - data analysis
+  - automation
+steps:
+  - intro_to_data_quality
+  - core_concepts_of_ataccama
+  - data_profiling_basics
+  - importance_of_data_cleansing
+  - quiz_on_data_quality
+  - role_of_automation_in_dq
+  - open_question_on_automation
+  - evaluating_data_quality
+type: MODULE
+repository: null

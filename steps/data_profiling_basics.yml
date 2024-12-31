@@ -1,0 +1,22 @@
+id: data_profiling_basics
+learningObjectives:
+  - Learn about data profiling and its role in data quality.
+hints:
+  - Data profiling is foundational, consider diving into Ataccama's
+    documentation for more details.
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: "Data profiling is a way to examine data and identify patterns to ensure accuracy and quality. [Ataccama ONE](https://www.ataccama.com/platform/data-profiling) automates this process which saves time and increases efficiency. Profiling helps you spot anomalies and understand your data better, setting the foundation for cleansing and other tasks."
+          - text: "It's like doing a health check on your data, ensuring all the pieces fit together correctly. Once you're grasping this concept, let's march forward."
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: finish_step

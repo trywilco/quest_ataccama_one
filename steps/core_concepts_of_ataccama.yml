@@ -1,0 +1,22 @@
+id: core_concepts_of_ataccama
+learningObjectives:
+  - Grasp the core concepts of Ataccama ONE's data quality solutions.
+hints:
+  - Explore the Ataccama ONE website for a deeper understanding of its core
+    functionalities.
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: "Let's talk about [Ataccama ONE's](https://www.ataccama.com/platform) approach to enhancing data quality. Ataccama ONE provides an integrated platform for data quality management. It allows automated data profiling, cleansing, and enrichment processes."
+          - text: "The platform offers real-time monitoring to ensure ongoing data quality. Understanding these core concepts will help you harness the full power of Ataccama ONE. Ready to see how it all ties together?"
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: finish_step
